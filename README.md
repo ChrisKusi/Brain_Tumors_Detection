@@ -12,7 +12,8 @@ The YOLO v8 algorithm was used to detect brain tumors in the MRI images. The alg
 Results
 The trained YOLO v8 model was able to accurately detect brain tumors in the test set with a high degree of accuracy. The precision and recall metrics were both above 90%, indicating that the model is highly effective in detecting brain tumors.
 
-<img src="runs/detect/brain_tumor_custom_#12/val_batch1_labels.jpg"/>
+<img src="[runs/detect/brain_tumor_custom_#12/val_batch1_labels.jpg](https://github.com/ChrisKusi/Brain_Tumors_Detection/blob/3bb84164542ababd7646a1d6d1d104d58e2c4bca/runs/detect/brain_tumor_custom_%2312/val_batch1_labels.jpg)"/>
+
 
 How to Use
 To use the brain tumor detection system, follow these steps:
