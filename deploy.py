@@ -1,7 +1,4 @@
 import streamlit as st
-import numpy as np
-import torch
-import cv2
 import av
 from PIL import Image
 from torchvision import transforms
