@@ -1,1 +1,5 @@
 av==10.0.0
+torch==1.13.1+cu117
+torchaudio==0.13.1+cu117
+torchvision==0.14.1+cu117
+ultralytics==8.0.49
