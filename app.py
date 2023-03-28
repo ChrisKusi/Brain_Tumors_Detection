@@ -71,46 +71,46 @@ if option == "Upload":
                 
 
 
-if option == "Real-time Detection":
-    st.title("Real-time Brain Tumor detection")
-    st.write("activate camera to detect some tumors...")
+# if option == "Real-time Detection":
+#     st.title("Real-time Brain Tumor detection")
+#     st.write("activate camera to detect some tumors...")
 
-    def callback(frame):
-        img = frame.to_ndarray(format="bgr24")
-        model.predict(source=img, save=True, save_txt=True)
+#     def callback(frame):
+#         img = frame.to_ndarray(format="bgr24")
+#         model.predict(source=img, save=True, save_txt=True)
               
         
     
-        st.success('Success!, brain tumor detected',  icon="✅")
-                #st.snow()
-                #st.balloons()
+#         st.success('Success!, brain tumor detected',  icon="✅")
+#                 #st.snow()
+#                 #st.balloons()
 
-                # st.write("seek medical care!: ")
+#                 # st.write("seek medical care!: ")
 
-                # Set the path to the directory containing the predictions
-        predictions_dirs = "runs/detect/predict*/"
+#                 # Set the path to the directory containing the predictions
+#         predictions_dirs = "runs/detect/predict*/"
 
-                # Get a list of all the prediction files in the directory
-        prediction_files_1 = glob.glob(os.path.join(predictions_dirs, "*.jpg"))
-        # print(prediction_files)
+#                 # Get a list of all the prediction files in the directory
+#         prediction_files_1 = glob.glob(os.path.join(predictions_dirs, "*.jpg"))
+#         # print(prediction_files)
 
-                # Get the most recent prediction file
-        most_recent_predictions = max(prediction_files_1, key=os.path.getctime)
+#                 # Get the most recent prediction file
+#         most_recent_predictions = max(prediction_files_1, key=os.path.getctime)
 
-                # Load the most recent prediction image using PIL
-        prediction_images = Image.open(most_recent_predictions)
+#                 # Load the most recent prediction image using PIL
+#         prediction_images = Image.open(most_recent_predictions)
 
-                # Display the most recent prediction image in Streamlit
-        st.image(prediction_images, caption="Most recent prediction")
-        st.error("Brain Tumor detection, seek immediate health care", icon="🚨")
+#                 # Display the most recent prediction image in Streamlit
+#         st.image(prediction_images, caption="Most recent prediction")
+#         st.error("Brain Tumor detection, seek immediate health care", icon="🚨")
 
     
-        return av.VideoFrame.from_ndarray(img, format="bgr24")
+#         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 
 
-    webrtc_streamer(key="example", video_frame_callback=callback, rtc_configuration={  # Add this line
-    "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+#     webrtc_streamer(key="example", video_frame_callback=callback, rtc_configuration={  # Add this line
+#     "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
         
 
 
