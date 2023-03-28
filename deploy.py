@@ -8,7 +8,7 @@ import glob
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 
 
-model = YOLO("runs/detect/brain_tumor_custom_#12/weights/best.pt") #Load your trained model
+model = YOLO("runs/detect/brain_tumor_custom_#42/weights/best.pt") #Load your trained model
 
 #logo = Image.open('brain-tumor-100.png')
 
