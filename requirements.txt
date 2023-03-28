@@ -4,3 +4,4 @@ pip install utralytics
 pip install opencv-python
 pip install glob
 pip install streamlit_webrtc
+python -m pip install --upgrade pip
