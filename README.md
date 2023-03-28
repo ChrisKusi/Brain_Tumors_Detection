@@ -13,6 +13,7 @@ Results
 The trained YOLO v8 model was able to accurately detect brain tumors in the test set with a high degree of accuracy. The precision and recall metrics were both above 90%, indicating that the model is highly effective in detecting brain tumors.
 
 <img src="runs/detect/brain_tumor_custom_#12/val_batch1_labels.jpg" width="640"/>
+![plot](runs/detect/brain_tumor_custom_#12/val_batch1_labels.jpg)
 
 
 How to Use
