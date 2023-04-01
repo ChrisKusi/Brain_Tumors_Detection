@@ -1,0 +1,7 @@
+
+train: C:\Users\RR NX 4301\Desktop\brain_tumors\train\images
+val: C:\Users\RR NX 4301\Desktop\brain_tumors\train\images
+
+nc: 1
+
+names: ['brain_tumor']
