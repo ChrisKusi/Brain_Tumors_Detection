@@ -9,7 +9,46 @@ import os
 import glob
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 
+st.set_page_config(page_title="Brain-Tumor", page_icon="🧠")
 
+# Add CSS styles to the footer section
+# Add content to the footer section
+footer_style = """
+<style>
+
+footer:after{
+    content: 'This project is developed by Christian Kusi. - Copyright @ 2023 ';
+    color: tomato;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    
+
+}
+.css-cio0dv {
+    font-size: 0;
+}
+
+.css-cio0dv::after {
+    content: 'Developed by Christian Kusi. Copyright @ 2023.';
+    color: tomato;
+    padding: 10px;
+    text-align: right;
+    position: relative;
+    font-size: 16px;
+    layout: wide;
+}
+a.css-z3au9t.egzxvld2 {
+    display: none;
+}
+
+
+
+</style>
+"""
+
+# Apply the CSS styles
+st.markdown(footer_style, unsafe_allow_html=True)
 model = YOLO("runs/detect/brain_tumor_custom_#42/weights/best.pt") #Load your trained model
 
 #logo = Image.open('brain-tumor-100.png')
