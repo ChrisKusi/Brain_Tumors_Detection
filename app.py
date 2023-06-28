@@ -82,13 +82,14 @@ if option == "Upload":
       
                 # model = YOLO("runs/detect/brain_tumor_custom_#1/weights/best.pt")
 
+                # results = model.predict(source=imgs, save=True, save_txt=True)
                 with torch.no_grad():
                     res = model.predict(imgs)
                     boxes = res[0].boxes
                     res_plotted = res[0].plot()[:, :, ::-1]
                     st.image(res_plotted, caption='Detected Image', width=None)
                
-                for r in res:
+                    for r in res:
                         for c in r.boxes.cls:
                             print(model.names[int(c)])
 
@@ -103,6 +104,7 @@ if option == "Upload":
                 st.markdown("####") 
                 st.subheader("No detection / Wrong Detections?")              
                 st.info("No detection?, Did you upload an image from the sample MRI scan? https://drive.google.com/drive/folders/1ageaw9allQgRimCv3xNM5WaErQfg9lbI?usp=drive_link,     if its a brain tumor image, and i am not able to detect, my developer Christian Kusi is working hard to make me more intelligent and very smart Just know this is the first version i am being trained to learn deeper... -brain-B 🧠")
+
 
                 #st.snow()
                 #st.balloons()
