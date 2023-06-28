@@ -2,7 +2,7 @@ import streamlit as st
 import av
 from PIL import Image
 from torchvision import transforms
-from ultralytics import YOLO #import YOLO algorithm from ultralyrics
+from ultralytics.yolo.engine.model import YOLO #import YOLO algorithm from ultralyrics
 import os
 import glob
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
@@ -41,7 +41,11 @@ if option == "Upload":
       
                 # model = YOLO("runs/detect/brain_tumor_custom_#1/weights/best.pt")
 
-                results = model.predict(source=imgs)
+                with torch.no_grad():
+                    res = model.predict(imgs)
+                    boxes = res[0].boxes
+                    res_plotted = res[0].plot()[:, :, ::-1]
+                    st.image(res_plotted, caption='Detected Image', width=None)
                
                 st.success('Success!, brain tumor detected',  icon="✅")
                 #st.snow()
