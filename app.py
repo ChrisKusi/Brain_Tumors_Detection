@@ -103,7 +103,7 @@ if option == "Upload":
                 st.markdown("""---""")
                 st.markdown("####") 
                 st.subheader("No detection / Wrong Detections?")              
-                st.info("No detection?, Did you upload an image from the sample MRI scan? https://drive.google.com/drive/folders/1ageaw9allQgRimCv3xNM5WaErQfg9lbI?usp=drive_link,     if its a brain tumor image, and i am not able to detect, my developer Christian Kusi is working hard to make me more intelligent and very smart Just know this is the first version i am being trained to learn deeper... -brain-B 🧠")
+                st.info("🚫🔍 No detection? 🤔 Did you upload an image from the sample MRI scan? Check out the sample MRI scan images here: 🔗(https://drive.google.com/drive/folders/1ageaw9allQgRimCv3xNM5WaErQfg9lbI?usp=drive_link). If it's a brain tumor image and I couldn't detect it, fear not! 🙌 My developer, Christian Kusi, is working tirelessly to enhance my intelligence and make me even smarter. 🧠💪 Remember, this is just the first version of my training. 🎓 I'm on a mission to dive deeper and learn more to improve my detection capabilities. Together, we're pushing the boundaries of brain tumor detection! 🌟💙 Stay tuned for updates and exciting advancements in my journey! Let's make a difference in the fight against brain tumors. 🎉🚀#NoDetection #SampleMRIScan #BrainTumorDetection #MakingADifference #IntelligentAI #LearningJourney 🚫🔍🔬🧠")
 
 
                 #st.snow()
