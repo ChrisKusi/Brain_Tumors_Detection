@@ -88,7 +88,22 @@ if option == "Upload":
                     res_plotted = res[0].plot()[:, :, ::-1]
                     st.image(res_plotted, caption='Detected Image', width=None)
                
-                st.success('Success!, brain tumor detected',  icon="✅")
+                for r in res:
+                        for c in r.boxes.cls:
+                            print(model.names[int(c)])
+
+                            if model.names[int(c)] == 'brain_tumor':
+                                st.error("Brain Tumor detection, seek immediate health care", icon="🚨")
+                            # if model.names[int(c)] == ' ':
+                                #st.write(model.names[int(c)])
+                
+                
+                st.markdown("####")
+                st.markdown("""---""")
+                st.markdown("####") 
+                st.subheader("No detection / Wrong Detections?")              
+                st.info("No detection?, Did you upload an image from the sample MRI scan? https://drive.google.com/drive/folders/1ageaw9allQgRimCv3xNM5WaErQfg9lbI?usp=drive_link,     if its a brain tumor image, and i am not able to detect, my developer Christian Kusi is working hard to make me more intelligent and very smart Just know this is the first version i am being trained to learn deeper... -brain-B 🧠")
+
                 #st.snow()
                 #st.balloons()
 
