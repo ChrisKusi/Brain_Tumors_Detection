@@ -41,7 +41,7 @@ if option == "Upload":
       
                 # model = YOLO("runs/detect/brain_tumor_custom_#1/weights/best.pt")
 
-                results = model.predict(source=imgs, save=True, save_txt=True)
+                results = model.predict(source=imgs)
                
                 st.success('Success!, brain tumor detected',  icon="✅")
                 #st.snow()
@@ -49,24 +49,24 @@ if option == "Upload":
 
                 # st.write("seek medical care!: ")
                 # Set the path to the directory containing the predictions
-                predictions_dir = "runs/detect/predict*/"
+                # --predictions_dir = "runs/detect/predict*/"
 
                 # Get a list of all the prediction files in the directory
-                prediction_files = glob.glob(os.path.join(predictions_dir, "*.jpg"))
-                print(prediction_files)
+                # --prediction_files = glob.glob(os.path.join(predictions_dir, "*.jpg"))
+                # --print(prediction_files)
 
                 # Get the most recent prediction file
-                most_recent_prediction = max(prediction_files, key=os.path.getctime)
+                # --most_recent_prediction = max(prediction_files, key=os.path.getctime)
 
                 
 
                 # Load the most recent prediction image using PIL
-                prediction_image = Image.open(most_recent_prediction)
-                prediction_image = prediction_image.resize((340,340))
+                # --prediction_image = Image.open(most_recent_prediction)
+                # --prediction_image = prediction_image.resize((340,340))
 
                 # Display the most recent prediction image in Streamlit
-                st.image(prediction_image, caption="Most recent prediction")
-                st.error("Brain Tumor detection, seek immediate health care", icon="🚨")
+                # --st.image(prediction_image, caption="Most recent prediction")
+                # --st.error("Brain Tumor detection, seek immediate health care", icon="🚨")
 
                 
 
