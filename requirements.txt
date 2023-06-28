@@ -25,7 +25,7 @@ torch==2.0.0
 torchaudio==2.0.1
 torchvision==0.15.1
 tqdm==4.64.1
-
+ultralytics==8.0.124
 urllib3==1.26.14
 validators==0.20.0
 pip==23.0.1
