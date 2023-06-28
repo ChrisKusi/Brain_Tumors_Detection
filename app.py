@@ -76,10 +76,9 @@ if option == "Upload":
 
                 
 
-
-# if option == "Real-time Detection":
-#     st.title("Real-time Brain Tumor detection")
-#     st.write("activate camera to detect some tumors...")
+if option == "Real-time Detection":
+     st.title("Real-time Brain Tumor detection")
+     st.write("Real Time Detection Coming Soon...")
 
 #     def callback(frame):
 #         img = frame.to_ndarray(format="bgr24")
