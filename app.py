@@ -1,3 +1,5 @@
+
+import torch
 import streamlit as st
 import av
 from PIL import Image
