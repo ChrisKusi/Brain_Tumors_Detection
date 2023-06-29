@@ -131,10 +131,48 @@ if option == "Upload":
                 # --st.error("Brain Tumor detection, seek immediate health care", icon="🚨")
 
                 
-
 if option == "Real-time Detection":
-     st.title("Real-time Brain Tumor detection")
-     st.write("Real Time Detection Coming Soon...")
+#     st.title("Real-time Brain Tumor detection")
+#     st.write("activate camera to detect some tumors...")
+
+    def callback(frame):
+        img = frame.to_ndarray(format="bgr24")
+        #model.predict(source=img, save=True, save_txt=True)
+
+             #def callback(frame):
+        #img = frame.to_ndarray(format="bgr24")
+         #model.predict(source=img, save=True, save_txt=True)
+
+        with torch.no_grad():
+            res = model.predict(img)
+            boxes = res[0].boxes
+            res_plotted = res[0].plot()[:, :, ::-1]
+            st.image(res_plotted, caption='Detected Image', width=None)
+               
+            for r in res:
+                for c in r.boxes.cls:
+                    print(model.names[int(c)])
+
+                    if model.names[int(c)] == 'brain_tumor':
+                        st.error("Brain Tumor detection, seek immediate health care", icon="🚨")
+        return av.VideoFrame.from_ndarray(img, format="bgr24")
+
+
+
+    webrtc_streamer(key="example", video_frame_callback=callback, rtc_configuration={  # Add this line
+    "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+
+    st.markdown("####")
+    st.markdown("""---""")
+    st.markdown("####") 
+    st.subheader("No detection / Wrong Detections?")              
+    st.info("No detection?, Did you upload an image from the sample MRI scan? https://drive.google.com/drive/folders/1ageaw9allQgRimCv3xNM5WaErQfg9lbI?usp=drive_link,     if its a brain tumor image, and i am not able to detect, my developer Christian Kusi is working hard to make me more intelligent and very smart Just know this is the first version i am being trained to learn deeper... -brain-B 🧠")
+
+
+
+#if option == "Real-time Detection":
+#     st.title("Real-time Brain Tumor detection")
+#     st.write("Real Time Detection Coming Soon...")
 
 #     def callback(frame):
 #         img = frame.to_ndarray(format="bgr24")
